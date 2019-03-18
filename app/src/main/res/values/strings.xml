@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MyMusicApplication</string>
+    <string name="app_name">WinampKiller</string>
 
     <string name="fragment_tag_list" translatable="false">fragment_list</string>
     <string name="fragment_tag_player" translatable="false">fragment_player</string>
