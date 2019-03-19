@@ -16,6 +16,7 @@ class Player(
     private var mPresenter: IPlayerPresenter? = null
     private var mPlayingState: PlayingState = PlayingState.Disabled
     private var mTitle: String? = ""
+    private var mPoster: Int? = null
     private var mTimeInMillis: Int = 0
     private var mPercent: Float = 0f
 
@@ -44,6 +45,7 @@ class Player(
         mTimeInMillis = 0
         mPercent = 0f
         mPlayingState = PlayingState.Idle
+        mPoster = song.posterRes
 
         notifyObserver()
     }
@@ -127,6 +129,7 @@ class Player(
         mPresenter?.updatePlaying(mPlayingState)
         mPresenter?.updateTitle(mTitle)
         mPresenter?.updateTimeline(Timeline(mTimeInMillis, mPercent))
+        mPresenter?.updatePoster(mPoster)
     }
 
     private fun notifyProgressUpdated() {

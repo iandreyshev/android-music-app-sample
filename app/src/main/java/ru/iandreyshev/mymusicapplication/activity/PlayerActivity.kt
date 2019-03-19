@@ -1,6 +1,7 @@
 package ru.iandreyshev.mymusicapplication.activity
 
 import android.os.Bundle
+import android.support.v4.content.ContextCompat
 import android.support.v7.app.AppCompatActivity
 import android.widget.SeekBar
 import kotlinx.android.synthetic.main.activity_player.*
@@ -64,6 +65,10 @@ class PlayerActivity : AppCompatActivity(), PlayerPresenter.IView {
 
     override fun updateTitle(title: String) {
         tvTitle.text = title
+    }
+
+    override fun updatePoster(resource: Int) {
+        imgPoster.background = ContextCompat.getDrawable(this, resource)
     }
 
     override fun updateTimeline(progress: Float, currentTime: String) {

@@ -19,6 +19,10 @@ class MusicApplication : Application() {
 
         instance = this
 
+        /*
+        * Плеер передается для того чтобы в будущем можно было обрабатывать
+        * события пользовательского ввода
+        * */
         mPlayerPresenter = PlayerPresenter(instance.resources, instance.mPlayer)
         instance.mPlayer.subscribe(instance.mPlayerPresenter)
     }

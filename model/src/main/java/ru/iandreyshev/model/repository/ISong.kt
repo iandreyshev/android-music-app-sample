@@ -4,4 +4,5 @@ interface ISong {
     val id: Long
     val title: String
     val resource: Int
+    val posterRes: Int
 }

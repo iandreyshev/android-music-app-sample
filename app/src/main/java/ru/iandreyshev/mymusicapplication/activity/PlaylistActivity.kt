@@ -55,6 +55,10 @@ class PlaylistActivity : AppCompatActivity(), PlaylistPresenter.IView, PlayerPre
     override fun updatePlaylist(playlist: List<ITrack>) {
         tracksList.removeAllViews()
 
+        /*
+        * Проходим по списку треков и создаем для каждого свой View,
+        * который добавляем в список и назначаем ему обработчик нажатия
+        * */
         playlist.forEach { track ->
             val trackView = layoutInflater.inflate(R.layout.item_track, tracksList, false)
             tracksList.addView(trackView)
@@ -89,6 +93,9 @@ class PlaylistActivity : AppCompatActivity(), PlaylistPresenter.IView, PlayerPre
     }
 
     override fun updateTimeline(progress: Float, currentTime: String) {
+    }
+
+    override fun updatePoster(resource: Int) {
     }
 
 }
